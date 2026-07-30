@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { Sms, Call, Location, Clock, Send2 } from "iconsax-react";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { contactSchema, type ContactFormData } from "@/lib/validators";
 import { PageHeader } from "@/components/shared/page-header";
 import { Input } from "@/components/ui/input";
@@ -59,8 +59,8 @@ export default function ContactPage() {
 
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-flame-50 text-flame-500">
-                    <Location size={20} variant="Bold" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-flame-500/10 border border-flame-500/20 text-flame-500">
+                    <MapPin className="h-5 w-5 text-flame-500" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-[var(--color-text-primary)] text-sm">Our Location</h3>
@@ -71,8 +71,8 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-flame-50 text-flame-500">
-                    <Call size={20} variant="Bold" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-flame-500/10 border border-flame-500/20 text-flame-500">
+                    <Phone className="h-5 w-5 text-flame-500" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-[var(--color-text-primary)] text-sm">Call Us</h3>
@@ -83,14 +83,14 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-flame-50 text-flame-500">
-                    <Sms size={20} variant="Bold" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-flame-500/10 border border-flame-500/20 text-flame-500">
+                    <Mail className="h-5 w-5 text-flame-500" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-[var(--color-text-primary)] text-sm">Email Address</h3>
                     <a
                       href="mailto:support@fastfooddelivery.com"
-                      className="text-xs text-flame-500 hover:underline mt-0.5 block"
+                      className="text-xs text-flame-500 hover:underline mt-0.5 block font-medium"
                     >
                       support@fastfooddelivery.com
                     </a>
@@ -101,7 +101,7 @@ export default function ContactPage() {
 
             <Card className="p-6 border-[var(--color-border-val)]/50 bg-[var(--color-card-bg)] rounded-2xl shadow-sm space-y-4">
               <div className="flex items-center gap-2">
-                <Clock size={20} className="text-flame-500" variant="Bold" />
+                <Clock className="h-5 w-5 text-flame-500" />
                 <h2 className="text-lg font-bold font-[family-name:var(--font-display)] text-[var(--color-text-primary)]">
                   Working Hours
                 </h2>
@@ -123,7 +123,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <Card className="p-8 border-[var(--color-border-val)]/50 bg-[var(--color-card-bg)] rounded-2xl shadow-sm">
               <div className="mb-6">
-                <Badge className="bg-flame-50 text-flame-600 hover:bg-flame-50 border-flame-100 px-3 py-1 mb-2">
+                <Badge className="bg-flame-500/10 text-flame-500 hover:bg-flame-500/20 border-flame-500/30 px-3 py-1 mb-2 font-semibold">
                   ✉️ Send Message
                 </Badge>
                 <h2 className="text-xl font-bold font-[family-name:var(--font-display)] text-[var(--color-text-primary)]">
@@ -214,7 +214,7 @@ export default function ContactPage() {
                   disabled={isLoading}
                   className="w-full bg-flame-500 hover:bg-flame-600 text-white rounded-xl h-10 gap-2 font-semibold shadow-md shadow-flame-500/10"
                 >
-                  <Send2 size={16} variant="Bold" />
+                  <Send className="h-4 w-4" />
                   {isLoading ? "Sending..." : "Send Message"}
                 </Button>
               </form>

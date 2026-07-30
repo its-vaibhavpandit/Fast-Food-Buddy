@@ -49,10 +49,9 @@ function applyTheme(resolved: "light" | "dark") {
 /* ─── Provider ──────────────────────────────────────────────── */
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "system";
-    return (localStorage.getItem(STORAGE_KEY) as Theme) || "system";
-  });
+  // Keep the first server and client render identical. Browser-only preferences
+  // are read after hydration to avoid rendering different markup.
+  const [theme, setThemeState] = useState<Theme>("system");
 
   const resolvedTheme = resolveTheme(theme);
 
@@ -60,6 +59,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     applyTheme(resolvedTheme);
   }, [resolvedTheme]);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem(STORAGE_KEY);
+    if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "system") {
+      const restoreTheme = window.setTimeout(() => setThemeState(savedTheme), 0);
+      return () => window.clearTimeout(restoreTheme);
+    }
+  }, []);
 
   // Listen for system theme changes when in "system" mode
   useEffect(() => {

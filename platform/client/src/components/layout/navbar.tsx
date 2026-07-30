@@ -55,10 +55,7 @@ export function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [locationModalOpen, setLocationModalOpen] = useState(false);
-  const [locationLabel, setLocationLabel] = useState<string>(() => {
-    if (typeof window === "undefined") return "Select Location";
-    return localStorage.getItem("selectedCity") || "Select Location";
-  });
+  const [locationLabel, setLocationLabel] = useState("Select Location");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -67,6 +64,7 @@ export function Navbar() {
       setLocationLabel(savedCity || "Select Location");
     };
 
+    handleLocationChange();
     window.addEventListener("location-changed", handleLocationChange);
     return () => window.removeEventListener("location-changed", handleLocationChange);
   }, []);

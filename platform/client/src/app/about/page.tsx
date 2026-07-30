@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Star1, Award, ShieldTick, Clock } from "iconsax-react";
+import { ShieldCheck, ChefHat, Clock, Star } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,12 +11,12 @@ import { Button } from "@/components/ui/button";
 
 const VALUES = [
   {
-    icon: ShieldTick,
+    icon: ShieldCheck,
     title: "Premium Quality Ingredients",
     description: "We use only fresh, locally sourced ingredients and house-made sauces prepared daily.",
   },
   {
-    icon: Award,
+    icon: ChefHat,
     title: "Chef-Inspired Menus",
     description: "Our chefs bring innovation to classic fast food recipes, balancing taste and clean nutrition.",
   },
@@ -184,8 +184,8 @@ export default function AboutPage() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
                   <Card className="p-6 text-center border-[var(--color-border-val)]/50 bg-[var(--color-card-bg)] hover:shadow-lg transition-shadow rounded-2xl">
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-flame-50 text-flame-500">
-                      <Icon size={24} variant="Bold" />
+                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-flame-500/10 border border-flame-500/20 text-flame-500 shadow-sm">
+                      <Icon className="h-7 w-7 text-flame-500" />
                     </div>
                     <h3 className="font-semibold text-[var(--color-text-primary)] text-base">
                       {val.title}
@@ -202,9 +202,9 @@ export default function AboutPage() {
 
         {/* Testimonial Section */}
         <section className="mt-20 bg-[var(--color-card-bg)] border border-[var(--color-border-val)]/60 rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-sm">
-          <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-flame-50/50 blur-2xl" />
+          <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-flame-500/10 blur-2xl" />
           <div className="relative z-10 max-w-3xl mx-auto text-center">
-            <Badge className="bg-amber-50 text-amber-700 hover:bg-amber-50 border-amber-200 px-3 py-1 mb-5">
+            <Badge className="bg-amber-500/10 text-amber-500 hover:bg-amber-500/20 border-amber-500/30 px-3 py-1 mb-5 font-semibold">
               🏆 Customers&apos; Choice
             </Badge>
             <p className="text-lg sm:text-xl font-medium italic text-[var(--color-text-primary)] leading-relaxed">
@@ -212,11 +212,11 @@ export default function AboutPage() {
               The burgers are juicy, flavorful, and cooked to perfection. The built-in AI nutritionist and calorie tracker in their menu page makes it so easy to keep check of what I eat. Service is lightning fast!”
             </p>
             <div className="mt-6 flex items-center justify-center gap-2">
-              <Star1 size={16} variant="Bold" className="text-amber-500" />
-              <Star1 size={16} variant="Bold" className="text-amber-500" />
-              <Star1 size={16} variant="Bold" className="text-amber-500" />
-              <Star1 size={16} variant="Bold" className="text-amber-500" />
-              <Star1 size={16} variant="Bold" className="text-amber-500" />
+              <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
+              <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
+              <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
+              <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
+              <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
             </div>
             <p className="mt-4 font-bold text-[var(--color-text-primary)] text-sm">
               Vaibhav Pandit

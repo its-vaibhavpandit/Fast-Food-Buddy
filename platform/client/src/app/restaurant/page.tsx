@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Shop, Notification, Setting2 } from "iconsax-react";
+import { Store, Bell, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -21,8 +21,8 @@ export default function RestaurantDashboardPage() {
         {/* Restaurant Outlet Header */}
         <Card className="p-6 bg-[var(--color-card-bg)] border border-[var(--color-border-val)]/60 rounded-2xl shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <div className="h-14 w-14 bg-flame-100 text-flame-600 rounded-2xl flex items-center justify-center font-bold">
-              <Shop size={32} variant="Bold" />
+            <div className="h-14 w-14 bg-flame-500/10 border border-flame-500/20 text-flame-500 rounded-2xl flex items-center justify-center font-bold">
+              <Store className="h-7 w-7 text-flame-500" />
             </div>
             <div>
               <div className="flex items-center gap-2">
@@ -48,7 +48,7 @@ export default function RestaurantDashboardPage() {
           <Card className="p-6 bg-[var(--color-card-bg)] border border-[var(--color-border-val)]/60 rounded-2xl shadow-xs space-y-4 lg:col-span-2">
             <div className="flex items-center justify-between pb-3 border-b border-[var(--color-border-val)]/60">
               <h3 className="text-base font-bold text-[var(--color-text-primary)] flex items-center gap-2">
-                <Notification size={18} className="text-flame-500" variant="Bold" /> Live Kitchen Orders (2 Active)
+                <Bell className="h-5 w-5 text-flame-500" /> Live Kitchen Orders (2 Active)
               </h3>
               <span className="text-xs font-bold text-flame-600 animate-pulse">● Auto Refresh Live</span>
             </div>
@@ -91,7 +91,7 @@ export default function RestaurantDashboardPage() {
           {/* Quick Stock Controls */}
           <Card className="p-6 bg-[var(--color-card-bg)] border border-[var(--color-border-val)]/60 rounded-2xl shadow-xs space-y-4">
             <h3 className="text-base font-bold text-[var(--color-text-primary)] flex items-center gap-2">
-              <Setting2 size={18} className="text-flame-500" variant="Bold" /> Quick Item Stock Toggles
+              <Settings className="h-5 w-5 text-flame-500" /> Quick Item Stock Toggles
             </h3>
             <div className="space-y-3 text-xs">
               <div className="flex items-center justify-between p-3 bg-[var(--color-bg)] rounded-xl">
